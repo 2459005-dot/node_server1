@@ -1,11 +1,10 @@
 const express = require("express")
 const app = express()
 const PORT = 3000
+const characterRouter = require('./router/character')
 
 app.use(express.json())
-
-const boardRouter = require('./route/board')
-app.use('/board',boardRouter)
+app.use('/char',characterRouter)
 
 
 

@@ -15,5 +15,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2459005-dot/node_server1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2459005-dot/node_server1/issues"
+  },
+  "homepage": "https://github.com/2459005-dot/node_server1#readme"
 }
