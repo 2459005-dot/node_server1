@@ -5,9 +5,9 @@ let characters = require('../models/characterModel')
 
 router.post('/', (req, res) => {
     try {
-        const { name, level, inOnline } = req.body
+        const { name, level, isOnline } = req.body
 
-        if (!name || !typeof level !== 'number') {
+        if (!name || typeof level !== 'number') {
             return res.status(400).json({ message: '이름과 레벨 입력' })
         }
         const newChar = {
@@ -55,8 +55,8 @@ router.put('/:id', (req, res) => {
         if (index===-1) {
             return res.status(404).json({ message: '캐릭터 없음' })
         }
-        const { name, level, inOnline } = req.body
-        if (!name || !typeof level !== 'number') {
+        const { name, level, isOnline } = req.body
+        if (!name || typeof level !== 'number') {
             return res.status(400).json({ message: '이름과 레벨 입력' })
         }
         characters[index]={
@@ -81,7 +81,7 @@ router.delete('/:id', (req, res) => {
             return res.status(404).json({ message: '캐릭터 없음' })
         }
         characters.splice(index,1)
-        res.status(200).json({ message: '전체 데이터 가져오기', character: characters[index] })
+        res.status(200).json({ message: '전체 데이터 가져오기', characters })
     } catch (error) {
 
         res.status(500).json({ message: '서버 오류' })
