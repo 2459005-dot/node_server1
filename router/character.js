@@ -63,7 +63,7 @@ router.put('/:id', (req, res) => {
             ...characters[index],
             name,
             level,
-            inOnline:isOnline??false
+            isOnline:isOnline??false
         }
         res.status(200).json({ message: '전체 데이터 가져오기', character: characters[index] })
     } catch (error) {
